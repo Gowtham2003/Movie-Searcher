@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+
+{% block body %}
+<div class="card">
+  <ul class="list-group">
+{% for movie in movies %}
+<li class="list-group-item"><a  href="/m?magnet='{{movie.Magnet}}'" >{{movie.movie}}</a></li>
+{% endfor %}
+
+  </ul>
+</div>
+
+<script>
+function copy(magnet) {
+  var copyText = document.getElementById("mag").innerText
+  var promise = navigator.clipboard.writeText(copyText)
+  alert(promise)
+  alert("Copied the text: " + copyText);
+}
+</script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+
+{% block body %}
+<div class="card">
+  <div class="card-body" id="mag">
+	  {{magnet}}
+  </div>
+  <button type="button" class="btn btn-primary" onclick="copy()">Primary</button>
+</div>
+
+<script>
+function copy(magnet) {
+  var copyText = document.getElementById("mag").innerText
+  var promise = navigator.clipboard.writeText(copyText)
+  alert(promise)
+  alert("Copied the text: " + copyText);
+}
+</script>
+
+
+{% endblock %}
